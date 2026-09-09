@@ -36,6 +36,10 @@
 | `level-up` | Closing one verified AIOS gap or selecting and shipping one useful workflow improvement. | Use after audit evidence identifies a bounded improvement. |
 | `3d-brain` | Building or updating the interactive AIOS knowledge globe. | Keep generated app/config separate from canonical context. |
 | `impeccable` | Designing, critiquing, auditing, polishing, or implementing frontend/UI/UX/HTML/CSS/design-system work. | Use for visual surfaces; combine with `writing-for-agents` only when writing agent instructions, not ordinary UI copy. |
+| `firecrawl` | Research needs managed web search, mapping, crawling, structured extraction, screenshots, branding, or multi-page collection. | Primary managed extraction route when the task justifies provider credits; do not use for every single-page fetch. |
+| `scrapling-official` | A local, repeatable scraper needs dynamic rendering, adaptive selectors, stealth fetching, sessions, spiders, proxy rotation, or technical block handling. | Prefer for technical control and recurring extraction; do not treat anti-bot features as permission to ignore site rules. |
+| `agent-browser` | A task requires real browser interaction, accessibility-tree navigation, forms, screenshots, authenticated state, QA, or funnel testing. | Use for interaction, not as the default bulk extractor. |
+| `blocked-page-recovery` | The primary fetch fails with a 403/429, paywall, WAF, bot wall, or unavailable page. | Fallback/orchestration only; try archives, API/RSS, and provenance-preserving routes before technical scraping. |
 
 ## Overlap rules
 
@@ -44,6 +48,8 @@
 - `test-driven-development` governs new behavior; `systematic-debugging` governs observed failure.
 - `requesting-code-review` precedes `finishing-a-development-branch`; `verification-before-completion` gates both.
 - `writing-for-agents` and `writing-skills` govern agent-facing documents; `impeccable` governs UI-facing documents and interfaces.
+- Research routing is layered: `web_search`/`web_extract` first, `firecrawl` for justified managed extraction, `scrapling-official` for local technical extraction, `agent-browser` for interaction, and `blocked-page-recovery` only when the primary route is blocked.
+- Do not load multiple extraction skills for the same URL unless the task requires comparison or the preceding route failed. This preserves credits, context, and provenance.
 - `audit` verifies routing and compatibility; it does not repair the system as a side effect.
 - `onboard`, `link`, `level-up`, and `3d-brain` are specialized workflows and should not be loaded for unrelated tasks.
 

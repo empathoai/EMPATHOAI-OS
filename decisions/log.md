@@ -45,3 +45,13 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 **Decision:** Adapt the upstream grill-me skill for EmpathoAiOS and ship matching Claude/Codex packages. Save every answer to brainstorms/, preserve resumable Q&A history, and update canonical context only with confirmed facts during requested context-building sessions.
 
 **Why:** Onboarding is an initial snapshot. Ongoing interviews capture changing priorities, decisions, and preferences while keeping tentative ideas distinct from current business facts.
+
+## 2026-09-09 - One task per session
+
+**Decision:** Execute one task per session and defer unrelated work to a later session.
+
+**Why:** Focused sessions preserve execution context, reduce cross-task contamination, and make work easier to resume and verify.
+
+**Alternatives considered:** Combining several related tasks in one session. This was rejected because apparent relatedness can still dilute context and completion evidence.
+
+**Owner:** Alex Guajardo.

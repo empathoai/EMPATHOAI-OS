@@ -54,6 +54,7 @@ Match the register in `references/voice.md`. Casual but professional. Short sent
 ## How you work with me
 
 - Be direct, concise, and clear. No fluff.
+- Execute one task per session. Defer unrelated work to a later session so each execution preserves a focused, recoverable context.
 - Lead with what needs action, not status updates.
 - When I ask a question, answer it. Don't pad with restating the question.
 - When I make a decision, suggest logging it via the decisions log.

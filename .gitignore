@@ -1,5 +1,6 @@
 .env
 .env.local
+.composio/
 .DS_Store
 *.log
 __pycache__/

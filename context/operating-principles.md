@@ -16,6 +16,7 @@ source: brainstorms/2026-09-09-context-interview-checkpoint.md
 7. **Manual before automation:** define, execute, and validate a process before delegating or automating it.
 8. **Maximum three strategic priorities:** keep no more than three active priorities per 90-day cycle.
 9. **Escalate by impact:** threats to cash, clients, capacity, deadlines, or company priorities escalate immediately.
+10. **One task per session:** keep each execution focused on one task and defer unrelated work to preserve context and recoverability.
 
 ## Operating rhythm
 
