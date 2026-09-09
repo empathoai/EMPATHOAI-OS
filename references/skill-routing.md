@@ -39,7 +39,10 @@
 | `firecrawl` | Research needs managed web search, mapping, crawling, structured extraction, screenshots, branding, or multi-page collection. | Primary managed extraction route when the task justifies provider credits; do not use for every single-page fetch. |
 | `scrapling-official` | A local, repeatable scraper needs dynamic rendering, adaptive selectors, stealth fetching, sessions, spiders, proxy rotation, or technical block handling. | Prefer for technical control and recurring extraction; do not treat anti-bot features as permission to ignore site rules. |
 | `agent-browser` | A task requires real browser interaction, accessibility-tree navigation, forms, screenshots, authenticated state, QA, or funnel testing. | Use for interaction, not as the default bulk extractor. |
-| `blocked-page-recovery` | The primary fetch fails with a 403/429, paywall, WAF, bot wall, or unavailable page. | Fallback/orchestration only; try archives, API/RSS, and provenance-preserving routes before technical scraping. |
+| `blocked-page-recovery` | A primary fetch fails with a 403/429, paywall, WAF, bot wall, or unavailable page. | Fallback/orchestration only; try archives, API/RSS, and provenance-preserving routes before technical scraping. |
+| `archify` | The task needs an architecture, workflow, sequence, data-flow, or lifecycle diagram, or a Mermaid conversion into a verified standalone HTML artifact. | Use for visualizing EmpathoAiOS architecture, operating workflows, research pipelines, and decision-relevant system maps. It is an artifact generator, not a general drawing editor. |
+| `last30days` | The task needs current, community-grounded signals about a market, customer pain, competitor, person, product, trend, or content topic from roughly the last 30 days. | Use for discovery and pre-decision research. Prefer existing Firecrawl, Apify, YouTube, or other connected tools when a narrow source-specific lookup is sufficient; do not activate optional paid/API sources without explicit configuration. |
+| `youtube-content` | The user provides a YouTube URL or asks for a transcript, summary, chapters, quotes, thread, or blog post from a specific video. | Use the public-transcript path; it does not require the user's YouTube account or channel. |
 
 ## Overlap rules
 
@@ -49,6 +52,9 @@
 - `requesting-code-review` precedes `finishing-a-development-branch`; `verification-before-completion` gates both.
 - `writing-for-agents` and `writing-skills` govern agent-facing documents; `impeccable` governs UI-facing documents and interfaces.
 - Research routing is layered: `web_search`/`web_extract` first, `firecrawl` for justified managed extraction, `scrapling-official` for local technical extraction, `agent-browser` for interaction, and `blocked-page-recovery` only when the primary route is blocked.
+- `last30days` is the research synthesis layer for multi-source recency and community signals; it does not replace the lower-level extraction and connected-source tools in `connections.md`.
+- `archify` is the documentation and communication layer after system facts or a workflow are known; it must not be used to invent topology or operational evidence.
+- `youtube-content` handles one known video; `last30days` handles recent multi-source discovery. Do not invoke the former's account connection for public transcription unless the user explicitly asks for account-owned YouTube operations.
 - Do not load multiple extraction skills for the same URL unless the task requires comparison or the preceding route failed. This preserves credits, context, and provenance.
 - `audit` verifies routing and compatibility; it does not repair the system as a side effect.
 - `onboard`, `link`, `level-up`, and `3d-brain` are specialized workflows and should not be loaded for unrelated tasks.
