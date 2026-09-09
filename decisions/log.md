@@ -54,4 +54,12 @@ Keep it terse. Future-you will thank present-you for capturing the *why*, not ju
 
 **Alternatives considered:** Combining several related tasks in one session. This was rejected because apparent relatedness can still dilute context and completion evidence.
 
+## 2026-09-09 - EmpathoKnowledge as the enterprise knowledge SSOT
+
+**Decision:** Use `F:\EmpathoKnowledge` as the single enterprise-wide source of truth for durable knowledge, including client context. `F:\EMPATHOAI_OS` remains an execution and orchestration system and must not maintain duplicate permanent knowledge copies.
+
+**Why:** Multiple OS-specific knowledge bases create conflicting versions, repeated client context, and uncertainty about which source controls. Centralizing durable knowledge preserves one authority while allowing each OS to keep its local tools, telemetry, scratch data, and deliverables.
+
+**Alternatives considered:** Maintaining separate knowledge bases with synchronization, or copying central knowledge into each OS. Both were rejected because synchronization and copies recreate the duplication problem.
+
 **Owner:** Alex Guajardo.

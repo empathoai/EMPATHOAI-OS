@@ -41,6 +41,12 @@ See `EXPANSIONS.md` for what to add as you grow.
 
 ## Knowledge base
 
+`F:\EmpathoKnowledge` is the enterprise-wide Single Source of Truth (SSOT) for durable knowledge, including client context, reusable frameworks, research, brands, and promoted learnings.
+
+This OS is an execution and orchestration system. It may consume central knowledge through approved references, configured paths, or directory junctions, but it must not maintain duplicate permanent copies of knowledge. Keep scripts, tools, telemetry, scratch data, and deliverables local to this OS.
+
+When adding or refining knowledge, update the canonical page in `F:\EmpathoKnowledge` rather than creating a parallel page here. Keep client-specific context in `F:\EmpathoKnowledge\clients\`; keep reusable knowledge in its appropriate central namespace.
+
 {{Filled by /onboard from Q1 + Q3 — what you do, who you serve, what matters this quarter.}}
 
 ## Voice
