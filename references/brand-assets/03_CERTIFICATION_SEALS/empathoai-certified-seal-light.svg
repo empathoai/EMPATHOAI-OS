@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <rect width="400" height="120" fill="#FFFFFF" stroke="#E5E5EA" stroke-width="1"/>
+  <rect x="0" y="0" width="6" height="120" fill="#FF4402"/>
+  <g transform="translate(24, 24)">
+    <g transform="translate(0, 4) scale(0.24)">
+      <rect width="288" height="288" fill="#0A0A0B"/>
+      <path d="M 0 0 L 288 0 L 288 64 L 64 64 L 64 112 L 240 112 L 240 176 L 64 176 L 64 224 L 224 224 L 224 288 L 0 288 Z" fill="#F5F5F5"/>
+      <rect x="224" y="224" width="64" height="64" fill="#FF4402"/>
+    </g>
+    <text x="88" y="24" font-family="'IBM Plex Sans', sans-serif" font-weight="700" font-size="16" letter-spacing="0.08em" fill="#0A0A0B">EMPATHOAI CERTIFIED</text>
+    <text x="88" y="46" font-family="'IBM Plex Sans', sans-serif" font-weight="500" font-size="12" letter-spacing="0.05em" fill="#666668">PRECISION DIAGNOSTIC &amp; PGS SPEC</text>
+    <text x="88" y="66" font-family="'IBM Plex Mono', monospace" font-size="10" letter-spacing="0.06em" fill="#FF4402">STATUS: RATIFIED // DOC-REF: SOVEREIGN-001</text>
+  </g>
+</svg>

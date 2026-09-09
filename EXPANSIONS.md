@@ -2,7 +2,7 @@
 
 The kit ships lean on purpose: six skills and a small set of context and reference files. As you grow, use `/link` to add new sources to the right route, and `/audit` to check that the information remains findable and current.
 
-The AIOS structure should look like a small, well-run business. Not a hoarder's basement.
+The EmpathoAiOS structure should look like a small, well-run business. Not a hoarder's basement.
 
 ---
 
@@ -15,7 +15,7 @@ The AIOS structure should look like a small, well-run business. Not a hoarder's 
 | `decisions/log.md` | Append-only record of what was decided and why. |
 | `brainstorms/` | Saved `/grill-me` interviews; created on first use. Confirmed context is linked back to its capture. |
 | `archives/` | Old files. Don't delete — move here. |
-| `connections.md` | Registry of every system your AIOS can reach. |
+| `connections.md` | Registry of every system your EmpathoAiOS can reach. |
 | `.claude/skills/` | Your skills: `/onboard`, `/audit`, `/level-up`, `/link`, `/grill-me`, `/3d-brain`. Add more only when they solve a real need. |
 | `aios-intake.md` | Source-of-truth for `/onboard`. Edit and re-run any time. |
 | `CLAUDE.md` | Root operating manual. Filled by `/onboard`. Edit when your role/voice changes. |
@@ -28,8 +28,8 @@ The AIOS structure should look like a small, well-run business. Not a hoarder's 
 |---|---|---|
 | `projects/` | You start running 2+ ongoing workstreams that have their own context | Active projects need scoped context separate from the evergreen `context/` files |
 | `templates/` | You catch yourself copy-pasting the same prompts or doc scaffolds | Reusable, parameterized starting points; reduces drift |
-| `brand-assets/` | You generate visual content (carousels, slides, thumbnails, images) | Centralizes logos, palettes, fonts, voice/tone — the AIOS reaches in instead of guessing |
-| `references/sops/` | You document how recurring processes run | Standard operating procedures the AIOS reads to run things consistently |
+| `brand-assets/` | You generate visual content (carousels, slides, thumbnails, images) | Centralizes logos, palettes, fonts, voice/tone — the EmpathoAiOS reaches in instead of guessing |
+| `references/sops/` | You document how recurring processes run | Standard operating procedures the EmpathoAiOS reads to run things consistently |
 | `references/{tool}-api.md` | You connect a new API or MCP and figure out how it works | Researched-once-saved-forever. `/audit` rewards this; future skills don't re-research. |
 | `scripts/` | You write Python or Bash to hit APIs not covered by MCPs | Most people's second connection is a script, not an MCP |
 | `.claude/agents/` | You need a sub-assistant for repeatable, multi-step research/writing | Agents run on cheaper models in their own context — keep your main session lean |
@@ -57,7 +57,7 @@ Anti-patterns. These look helpful but rot the structure:
 - **Don't dump raw email/Slack archives into `references/`.** The wiki is not a doc dump. Interpreted facts only.
 - **Don't build folder-of-folders for organization theater.** Flat with good naming beats deep nesting. If you need a folder hierarchy to find something, you have a search problem, not an organization problem.
 - **Don't add `notes/`, `misc/`, `tmp/`, or `inbox/`.** Graveyards. Use `archives/` if it's old, write a real file in the right place if it's new.
-- **Don't pre-create folders you don't need yet.** Empty folders are noise. The AIOS will tell you when it's time.
+- **Don't pre-create folders you don't need yet.** Empty folders are noise. The EmpathoAiOS will tell you when it's time.
 - **Don't have parallel `decisions.md` and `decisions/log.md`.** Pick one. The kit ships `decisions/log.md`.
 - **Don't fork your operating manual.** One `CLAUDE.md` at the root. Sub-OS folders can have their own scoped CLAUDE.md, but the root is canonical.
 
@@ -69,10 +69,10 @@ Ask three questions:
 
 1. **Is this conceptually new?** Or does it fit somewhere existing?
 2. **Will I touch this 3+ times in the next month?** If not, it's premature.
-3. **Could `/level-up` route a future skill into here naturally?** If yes, the AIOS will use it. If no, you're organizing for yourself, not for the system.
+3. **Could `/level-up` route a future skill into here naturally?** If yes, the EmpathoAiOS will use it. If no, you're organizing for yourself, not for the system.
 
 Two yeses = add. One yes = wait.
 
 ---
 
-> *Your AIOS structure should look like a small, well-run business — not a hoarder's basement. When you can't find something, that's a signal to consolidate, not to add another folder.*
+> *Your EmpathoAiOS structure should look like a small, well-run business — not a hoarder's basement. When you can't find something, that's a signal to consolidate, not to add another folder.*

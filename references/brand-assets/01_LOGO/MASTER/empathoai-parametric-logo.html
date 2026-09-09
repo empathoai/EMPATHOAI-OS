@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmpathoAI — Parametric Optical Logo</title>
+  <!-- Load fonts synchronously -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=Inter:wght@700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #0A0A0B;
+      color: #F5F5F5;
+      font-family: 'IBM Plex Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .container {
+      background: #141416;
+      border: 1px solid #2D2D2F;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 900px;
+    }
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #2D2D2F;
+      padding-bottom: 1rem;
+    }
+    .title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #F5F5F5;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      background: #1E1E22;
+      border: 1px solid #2D2D2F;
+      padding: 1rem 1.5rem;
+    }
+    .slider-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+    }
+    input[type="range"] {
+      flex: 1;
+      accent-color: #FF4402;
+    }
+    .canvas-box {
+      background: #0A0A0B;
+      border: 1px solid #2D2D2F;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 200px;
+    }
+    canvas {
+      display: block;
+    }
+    .telemetry {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      font-size: 0.75rem;
+      color: #8E8E93;
+    }
+    .telemetry-card {
+      background: #1E1E22;
+      border: 1px solid #2D2D2F;
+      padding: 0.75rem 1rem;
+    }
+    .telemetry-card span {
+      display: block;
+      color: #F5F5F5;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .telemetry-card span.orange {
+      color: #FF4402;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="title">EMPATHOAI // PARAMETRIC OPTICAL LOGO SYSTEM</div>
+      <div style="font-size: 0.75rem; color: #FF4402;">v1.1 CANONICAL</div>
+    </div>
+
+    <div class="controls">
+      <div class="slider-wrap">
+        <label for="slider">CAP_HEIGHT:</label>
+        <input type="range" id="slider" min="24" max="160" value="64" step="1">
+        <span id="cap-val" style="color: #FF4402; font-weight: 600; width: 50px;">64px</span>
+      </div>
+      <button id="toggle-guides" style="background:#141416; color:#F5F5F5; border:1px solid #2D2D2F; padding:0.5rem 1rem; font-family:inherit; cursor:pointer; font-size:0.75rem;">GUÍAS: ON</button>
+    </div>
+
+    <div class="canvas-box">
+      <canvas id="logo-canvas"></canvas>
+    </div>
+
+    <div class="telemetry">
+      <div class="telemetry-card">
+        CAP_HEIGHT Master
+        <span class="orange" id="t-cap">64.00 px</span>
+      </div>
+      <div class="telemetry-card">
+        IBM Plex Sans Font-Size
+        <span id="t-ibm">--</span>
+      </div>
+      <div class="telemetry-card">
+        Inter Font-Size
+        <span id="t-inter">--</span>
+      </div>
+      <div class="telemetry-card">
+        Gap Cuadrado &rarr; E (0.31&times;)
+        <span id="t-gap1">--</span>
+      </div>
+      <div class="telemetry-card">
+        Gap A &rarr; Terminal I (0.115&times;)
+        <span id="t-gap2">--</span>
+      </div>
+      <div class="telemetry-card">
+        Ancho Total Óptico
+        <span class="orange" id="t-width">--</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('logo-canvas');
+    const ctx = canvas.getContext('2d');
+    const slider = document.getElementById('slider');
+    const capVal = document.getElementById('cap-val');
+    const toggleBtn = document.getElementById('toggle-guides');
+
+    let showGuides = true;
+
+    // Measurement scratch canvas
+    const mCanvas = document.createElement('canvas');
+    const mCtx = mCanvas.getContext('2d');
+
+    // Calibrate font size such that uppercase flat 'H' visible height == CAP_HEIGHT
+    function getCalibrationFactor(fontFamily) {
+      const testSize = 1000;
+      mCtx.font = `700 ${testSize}px "${fontFamily}"`;
+      mCtx.textBaseline = 'alphabetic';
+      const metrics = mCtx.measureText('H');
+      const visibleCapHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
+      return testSize / visibleCapHeight;
+    }
+
+    function drawParametricLogo(capHeight) {
+      const ibmFactor = getCalibrationFactor('IBM Plex Sans');
+      const interFactor = getCalibrationFactor('Inter');
+
+      const ibmFontSize = capHeight * ibmFactor;
+      const interFontSize = capHeight * interFactor;
+
+      // Measure EMPATHOA
+      mCtx.font = `700 ${ibmFontSize}px "IBM Plex Sans"`;
+      mCtx.textBaseline = 'alphabetic';
+      const mEMPATHOA = mCtx.measureText('EMPATHOA');
+
+      // Measure Terminal I
+      mCtx.font = `700 ${interFontSize}px "Inter"`;
+      mCtx.textBaseline = 'alphabetic';
+      const mI = mCtx.measureText('I');
+
+      // Exact Ink dimensions
+      const squareSize = capHeight;
+      const gapSquareToE = 0.31 * capHeight;
+      const gapAtoI = 0.115 * capHeight;
+
+      // Horizontal Layout math
+      const padX = 40;
+      const padY = 40;
+
+      // 1. Signal Square
+      const squareX = padX;
+      const squareY = padY;
+      const squareRight = squareX + squareSize;
+
+      // 2. EMPATHOA
+      // Left ink edge starts at squareRight + gapSquareToE
+      const ibmLeftInk = squareRight + gapSquareToE;
+      // In canvas fillText(x), ink starts at x - m.actualBoundingBoxLeft
+      // Therefore textOriginX = ibmLeftInk + m.actualBoundingBoxLeft
+      const ibmTextX = ibmLeftInk + mEMPATHOA.actualBoundingBoxLeft;
+      // Top ink aligns to squareY -> baseline = squareY + m.actualBoundingBoxAscent
+      const ibmBaselineY = squareY + mEMPATHOA.actualBoundingBoxAscent;
+      // Right ink of EMPATHOA is at ibmTextX + mEMPATHOA.actualBoundingBoxRight
+      const ibmRightInk = ibmTextX + mEMPATHOA.actualBoundingBoxRight;
+      const ibmInkWidth = ibmRightInk - ibmLeftInk;
+
+      // 3. Terminal I
+      // Left ink edge starts at ibmRightInk + gapAtoI
+      const interLeftInk = ibmRightInk + gapAtoI;
+      const interTextX = interLeftInk + mI.actualBoundingBoxLeft;
+      const interBaselineY = squareY + mI.actualBoundingBoxAscent;
+      const interRightInk = interTextX + mI.actualBoundingBoxRight;
+      const interInkWidth = interRightInk - interLeftInk;
+
+      // Dimensions
+      const totalWidth = (interRightInk - squareX);
+      const canvasW = Math.ceil(totalWidth + (padX * 2));
+      const canvasH = Math.ceil(capHeight + (padY * 2));
+
+      // HiDPI rendering
+      const dpr = window.devicePixelRatio || 2;
+      canvas.width = canvasW * dpr;
+      canvas.height = canvasH * dpr;
+      canvas.style.width = canvasW + 'px';
+      canvas.style.height = canvasH + 'px';
+
+      ctx.save();
+      ctx.scale(dpr, dpr);
+
+      // Background
+      ctx.fillStyle = '#0A0A0B';
+      ctx.fillRect(0, 0, canvasW, canvasH);
+
+      // 1. Signal Square: #FF4402, 1:1 square, 0 radius
+      ctx.fillStyle = '#FF4402';
+      ctx.fillRect(squareX, squareY, squareSize, squareSize);
+
+      // 2. EMPATHOA: IBM Plex Sans 700, #F5F5F5
+      ctx.fillStyle = '#F5F5F5';
+      ctx.font = `700 ${ibmFontSize}px "IBM Plex Sans"`;
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText('EMPATHOA', ibmTextX, ibmBaselineY);
+
+      // 3. Terminal I: Inter 700, #F5F5F5
+      ctx.fillStyle = '#F5F5F5';
+      ctx.font = `700 ${interFontSize}px "Inter"`;
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText('I', interTextX, interBaselineY);
+
+      // Diagnostics Guides
+      if (showGuides) {
+        // Optical Top Line (y = squareY)
+        ctx.strokeStyle = '#00F0FF';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 3]);
+
+        ctx.beginPath();
+        ctx.moveTo(padX - 15, squareY);
+        ctx.lineTo(canvasW - padX + 15, squareY);
+        ctx.stroke();
+
+        // Optical Bottom Line (y = squareY + capHeight)
+        ctx.beginPath();
+        ctx.moveTo(padX - 15, squareY + capHeight);
+        ctx.lineTo(canvasW - padX + 15, squareY + capHeight);
+        ctx.stroke();
+
+        // Ink bounding boxes (Magenta)
+        ctx.strokeStyle = '#FF0055';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([2, 2]);
+
+        // Square box
+        ctx.strokeRect(squareX, squareY, squareSize, squareSize);
+        // EMPATHOA ink box
+        ctx.strokeRect(ibmLeftInk, squareY, ibmInkWidth, capHeight);
+        // Terminal I ink box
+        ctx.strokeRect(interLeftInk, squareY, interInkWidth, capHeight);
+
+        // Gap spacing dimension markers (Orange)
+        ctx.setLineDash([]);
+        ctx.strokeStyle = '#FF4402';
+        const dimY = squareY + capHeight + 10;
+
+        ctx.beginPath();
+        ctx.moveTo(squareRight, dimY);
+        ctx.lineTo(ibmLeftInk, dimY);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(ibmRightInk, dimY);
+        ctx.lineTo(interLeftInk, dimY);
+        ctx.stroke();
+      }
+
+      ctx.restore();
+
+      // Update Telemetry
+      document.getElementById('t-cap').textContent = capHeight.toFixed(2) + ' px';
+      document.getElementById('t-ibm').textContent = ibmFontSize.toFixed(2) + ' px';
+      document.getElementById('t-inter').textContent = interFontSize.toFixed(2) + ' px';
+      document.getElementById('t-gap1').textContent = gapSquareToE.toFixed(2) + ' px';
+      document.getElementById('t-gap2').textContent = gapAtoI.toFixed(2) + ' px';
+      document.getElementById('t-width').textContent = totalWidth.toFixed(2) + ' px';
+    }
+
+    slider.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      capVal.textContent = val + 'px';
+      drawParametricLogo(val);
+    });
+
+    toggleBtn.addEventListener('click', () => {
+      showGuides = !showGuides;
+      toggleBtn.textContent = showGuides ? 'GUÍAS: ON' : 'GUÍAS: OFF';
+      drawParametricLogo(parseFloat(slider.value));
+    });
+
+    // Ensure fonts are loaded before calculating
+    document.fonts.ready.then(() => {
+      drawParametricLogo(64);
+    });
+  </script>
+</body>
+</html>

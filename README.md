@@ -1,16 +1,16 @@
-# AIS-OS: AI Operating System starter kit for Claude Code and Codex
+# EmpathoAiOS: AI Operating System de Alex Guajardo
 
 A free, MIT-licensed starter kit that turns Claude Code or Codex into your personal **AI Operating System (AI OS)**. Audience: anyone building automations — solopreneurs, small business operators, managers, creators, AI consultants. Pairs with a companion masterclass video.
 
 The kit personalizes itself to you via an `/onboard` interview. Use `/grill-me` whenever you want to deepen its understanding of your business, preferences, or plans. Use `/link` to make new information findable, `/audit` to verify the system, `/level-up` to close one useful gap at a time, and `/3d-brain` to explore your saved knowledge as an interactive globe.
 
-> **AIS-OS** stands for **AI Automation Society OS** — the way Nate designed this AI OS to be set up for members of his community, [AI Automation Society](https://www.skool.com/ai-automation-society). The kit is universal (it works for anyone), but the structure mirrors how AIS members run their own businesses on top of it.
+> **EmpathoAiOS** is **Alex Guajardo's** personal AI Operating System, built to organize context, connections, capabilities, and cadence around EmpathoAI. This is a personalized adaptation of an open-source starter kit; original attributions are preserved in `LICENSE` and `references/3ms-framework.md`.
 
 ---
 
 ## The litmus test
 
-> **"While you're not at your desk, your AIS-OS observes one real-world event and produces an output that's faster and more accurate than what you'd produce yourself."**
+> **"While you're not at your desk, your EmpathoAiOS observes one real-world event and produces an output that's faster and more accurate than what you'd produce yourself."**
 
 Every design decision in this kit rolls up to that test. If a layer, skill, or template doesn't contribute to it, it doesn't ship.
 
@@ -52,7 +52,9 @@ The kit teaches two complementary frameworks. **Three Ms first, Four Cs second.*
 
 Full breakdown in `references/3ms-framework.md`. The `/level-up` skill walks you through all three weekly.
 
-> *The Three Ms of AI™ is a trademark of Nate Herk. © 2026 Nate Herk.*
+> *EmpathoAiOS — implementation and operation: Alex Guajardo.*
+>
+> *The Three Ms of AI™ is a third-party framework. Original attribution is preserved in `references/3ms-framework.md` and `LICENSE`.*
 
 ### The Four Cs — architecture (what you build)
 
@@ -65,7 +67,9 @@ Full breakdown in `references/3ms-framework.md`. The `/level-up` skill walks you
 
 **Brand line:** Context. Connections. Capabilities. Cadence.
 
-> *The Four Cs of an AI OS™ is a trademark of Nate Herk. © 2026 Nate Herk.*
+> *EmpathoAiOS — operational architecture: Alex Guajardo.*
+>
+> *The Four Cs of an AI OS™ is a third-party framework. © 2026 Nate Herk. Attribution is preserved for legal reasons.*
 
 Dependency graph: Context is non-skippable. Connections + Capabilities can build in parallel. Cadence is last — don't automate workflows that don't work manually.
 
@@ -102,9 +106,9 @@ The kit includes setup, ongoing context interviews, routing, verification, a wee
 
 Turn your growing collection of notes, projects, and assistant memories into one place you can explore. See which ideas connect, search for something you remember, open the original note, and spot knowledge that needs attention. The growth replay also gives you a visual way to show someone what your AI OS contains.
 
-[![Watch the 3D Brain grow from one idea into a connected knowledge globe](docs/media/3d-brain-preview.gif)](https://github.com/nateherkai/AIS-OS/raw/refs/heads/main/docs/media/3d-brain-demo.mp4)
+[![Watch the 3D Brain grow from one idea into a connected knowledge globe](docs/media/3d-brain-preview.gif)](docs/media/3d-brain-demo.mp4)
 
-The preview above plays the full growth sequence. **[Download the original 36-second video](https://github.com/nateherkai/AIS-OS/raw/refs/heads/main/docs/media/3d-brain-demo.mp4)** for full-resolution playback. This recording shows Nate's HerkBrain. The skill builds yours with the name, categories, and saved knowledge you choose.
+The preview above plays the full growth sequence. **[Download the original 36-second video](docs/media/3d-brain-demo.mp4)** for full-resolution playback. This recording is inherited upstream media. The skill builds Alex's 3D Brain using the name, categories, and saved knowledge he selects.
 
 Run `/3d-brain` in Claude Code or `$3d-brain` in Codex. It asks what to call your brain and which categories to show, with suggested source folders. Then it creates `apps/3d-brain/` using the included application template. Your name, categories, colors, and paths live in a local config.
 
@@ -134,7 +138,7 @@ The six skills are also installed under `.agents/skills/`. Use the skill picker 
 ## Repo layout
 
 ```
-AIS-OS/
+EmpathoAiOS/
 ├── README.md
 ├── CLAUDE.md                        ← Shared operating manual for Claude Code
 ├── AGENTS.md                        ← Matching operating manual for Codex
@@ -169,8 +173,8 @@ See `EXPANSIONS.md` for what to add as you grow (`projects/`, `templates/`, `scr
 
 ## License + attribution
 
-MIT License. © 2026 Nate Herk.
+## Identity of this adaptation
 
-The Three Ms of AI™ and The Four Cs of an AI OS™ are trademarks of Nate Herk. Both frameworks ship in this repo with attribution. Use freely; don't repackage as your own.
+**EmpathoAiOS** is **Alex Guajardo's** personal adaptation and configuration for EmpathoAI. The inherited code and frameworks retain the original license and attributions listed in `LICENSE` and `references/3ms-framework.md`. Third-party copyrights are not removed or replaced.
 
 The companion masterclass video walks you through the kit step by step. Link will land here once it ships.

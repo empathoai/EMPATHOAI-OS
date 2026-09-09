@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background Canvas & Hairline -->
+  <g id="canvas">
+    <rect width="512" height="512" fill="#0A0A0B"/>
+    <rect x="0.5" y="0.5" width="511" height="511" fill="none" stroke="#2D2D2F" stroke-width="1"/>
+  </g>
+
+  <!-- Concept 2: 8px-Grid Sovereign Monolith (Uniform 64px Beams & 64x64 Precision Anchor) -->
+  <!-- Bounds: x=112..400, y=112..400 (288x288) -->
+  <g id="mark">
+    <!-- Monolithic Ivory E Body -->
+    <path id="e-body" d="M 112 112 L 400 112 L 400 176 L 176 176 L 176 224 L 352 224 L 352 288 L 176 288 L 176 336 L 336 336 L 336 400 L 112 400 Z" fill="#F5F5F5"/>
+    
+    <!-- 64x64 1:1 Electric Signal Orange Anchor (#FF4402) -->
+    <rect id="signal-anchor" x="336" y="336" width="64" height="64" fill="#FF4402"/>
+  </g>
+</svg>

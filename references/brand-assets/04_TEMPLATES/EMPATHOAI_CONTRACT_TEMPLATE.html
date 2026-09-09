@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmpathoAI — Master Services Agreement & Statement of Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* EmpathoAI Sovereign Tokens */
+      --canvas: #0A0A0B;
+      --surface-deep: #141416;
+      --surface-mid: #1E1E22;
+      --hairline: #2D2D2F;
+      --ivory: #F5F5F5;
+      --muted: #8E8E93;
+      --orange: #FF4402;
+      --ivory-dark: #C7C7CC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; }
+      .page { page-break-after: always; box-shadow: none; border: none; }
+      .page:last-child { page-break-after: auto; }
+    }
+
+    body {
+      background: var(--canvas);
+      color: var(--ivory);
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .contract-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .page {
+      background: var(--canvas);
+      border: 1px solid var(--hairline);
+      padding: 60px 56px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    /* Lead Anchor Block - Section Marker */
+    .anchor {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.2em;
+      height: 1.2em;
+      background: var(--orange);
+      color: var(--canvas);
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      font-size: 0.85em;
+      line-height: 1;
+      margin-right: 0.5em;
+      flex-shrink: 0;
+    }
+
+    /* Typography Scale */
+    .display-h1 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(36px, 4.5vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ivory);
+    }
+
+    .section-h2 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 600;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--ivory);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--hairline);
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .subhead-h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: 0;
+      color: var(--ivory);
+      margin-top: 28px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .body-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ivory-dark);
+      margin-bottom: 14px;
+    }
+
+    .body-text strong { color: var(--ivory); font-weight: 600; }
+
+    .telemetry {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .telemetry.orange { color: var(--orange); }
+
+    .label {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .value {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ivory);
+    }
+
+    /* Cover Page */
+    .cover-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    .cover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .cover-logo {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+
+    .cover-logo .anchor {
+      width: 1.4em;
+      height: 1.4em;
+      font-size: 1.1em;
+    }
+
+    .cover-logo-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ivory);
+      line-height: 1;
+    }
+
+    .cover-meta {
+      text-align: right;
+    }
+
+    .cover-title {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ivory);
+      margin-top: 40px;
+      margin-bottom: 8px;
+    }
+
+    .cover-subtitle {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .cover-doctrine {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+      font-style: italic;
+      border-left: 3px solid var(--orange);
+      padding-left: 16px;
+      margin-bottom: 40px;
+    }
+
+    .cover-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .detail-block {
+      background: var(--surface-deep);
+      border: 1px solid var(--hairline);
+      padding: 24px;
+    }
+
+    .detail-block.full { grid-column: span 2; }
+
+    /* Parties Table */
+    .parties-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
+
+    .party-card {
+      background: var(--surface-deep);
+      border: 1px solid var(--hairline);
+      padding: 24px;
+    }
+
+    .party-card .label { margin-bottom: 6px; }
+    .party-card .value { margin-bottom: 16px; }
+    .party-card .value:last-child { margin-bottom: 0; }
+
+    /* Key Details Table */
+    .key-details {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 12px 24px;
+      margin-top: 24px;
+    }
+
+    .key-details .label { color: var(--muted); }
+    .key-details .value { color: var(--ivory); }
+
+    /* Milestones Table */
+    .milestone-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      margin-bottom: 24px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+    }
+
+    .milestone-table th,
+    .milestone-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .milestone-table th {
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--surface-deep);
+    }
+
+    .milestone-table td {
+      color: var(--ivory-dark);
+    }
+
+    .milestone-table td:first-child {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      color: var(--orange);
+      width: 60px;
+    }
+
+    .milestone-table tr:last-child td { border-bottom: none; }
+
+    /* Signature Block */
+    .signature-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .signature-party {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .signature-line {
+      height: 1px;
+      background: var(--hairline);
+      width: 100%;
+      max-width: 280px;
+      margin-top: 40px;
+    }
+
+    /* Footer */
+    .page-footer {
+      position: absolute;
+      bottom: 32px;
+      left: 56px;
+      right: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .page-number::before { content: "— "; }
+    .page-number::after { content: " —"; }
+
+    /* Placeholder styling */
+    .placeholder {
+      background: var(--surface-mid);
+      border: 1px dashed var(--hairline);
+      color: var(--muted);
+      padding: 2px 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9em;
+    }
+
+    /* List styling */
+    ul.contract-list {
+      margin: 12px 0 12px 24px;
+      list-style: none;
+    }
+
+    ul.contract-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: var(--ivory-dark);
+    }
+
+    ul.contract-list li::before {
+      content: "■";
+      color: var(--orange);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8px;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    /* Numbered clauses */
+    .clause {
+      margin-bottom: 20px;
+    }
+
+    .clause-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .clause-title {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ivory);
+      margin-bottom: 8px;
+    }
+
+    /* Info callout */
+    .info-callout {
+      background: var(--surface-deep);
+      border: 1px solid var(--hairline);
+      border-left: 3px solid var(--orange);
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .info-callout .label { color: var(--orange); margin-bottom: 4px; }
+
+    /* Header bar for inner pages */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .page-header .section-h2 { margin: 0; border: none; }
+
+    /* Print button */
+    .print-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--orange);
+      color: var(--canvas);
+      border: none;
+      padding: 12px 24px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      z-index: 100;
+      transition: opacity 0.2s;
+    }
+
+    .print-btn:hover { opacity: 0.9; }
+
+    @media print {
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn no-print" onclick="window.print()">Imprimir / Guardar PDF</button>
+
+  <div class="contract-wrapper">
+    <!-- ==================== PAGE 1: COVER ==================== -->
+    <div class="page cover-page">
+      <div class="cover-header">
+        <div class="cover-logo">
+          <!-- EmpathoAI Master Logo - Dark Transparent (from brand assets) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1013 180" width="280" height="50" class="master-logo" role="img" aria-label="EmpathoAI">
+            <g id="empathoai-master-logo">
+              <!-- Signal Square -->
+              <rect id="signal-square" x="40.00" y="40.00" width="100.00" height="100.00" fill="#FF4402"/>
+              <!-- EMPATHOA Glyphs (IBM Plex Sans 700) -->
+              <g id="wordmark-ibm" fill="#F5F5F5">
+                <path id="glyph-E" d="M552 0H77V698H552V563H229V420H506V286H229V135H552Z" transform="translate(159.97, 140.00) scale(0.143266, -0.143266)"/>
+                <path id="glyph-M" d="M77 0V698H238L331 520L409 371H411L488 520L580 698H742V0H599V350V458H596L545 356L409 109L276 355L223 465H220V350V0Z" transform="translate(246.93, 140.00) scale(0.143266, -0.143266)"/>
+                <path id="glyph-P" d="M229 0H77V698H407Q472 698 519.5 670.0Q567 642 593.0 591.5Q619 541 619 475Q619 409 593.0 359.0Q567 309 519.5 280.5Q472 252 407 252H229ZM229 566V384H389Q412 384 428.0 392.0Q444 400 453.0 415.5Q462 431 462 453V497Q462 520 453.0 535.0Q444 550 428.0 558.0Q412 566 389 566Z" transform="translate(364.27, 140.00) scale(0.143266, -0.143266)"/>
+                <path id="glyph-A" d="M665 0H507L457 166H224L174 0H20L250 698H438ZM420 295 377 440 342 560H337L303 440L260 295Z" transform="translate(458.25, 140.00) scale(0.143266, -0.143266)"/>
+                <path id="glyph-T" d="M557 563H368V0H216V563H27V698H557Z" transform="translate(556.39, 140.00) scale(0.143266, -0.143266)"/>
+                <path id="glyph-H" d="M495 0V286H229V0H77V698H229V420H495V698H647V0Z" transform="translate(640.05, 140.00) scale(0.143266, -0.143266)"/>
+                <path id="glyph-O" d="M357 -12Q265 -12 195.5 29.0Q126 70 88.0 150.5Q50 231 50 349Q50 468 88.0 548.0Q126 628 195.5 669.0Q265 710 357 710Q450 710 519.0 669.0Q588 628 626.0 548.0Q664 468 664 349Q664 231 626.0 150.5Q588 70 519.0 29.0Q450 -12 357 -12ZM357 123Q403 123 435.5 143.5Q468 164 485.5 203.0Q503 242 503 297V401Q503 457 485.5 495.5Q468 534 435.5 554.5Q403 575 357 575Q312 575 279.0 554.5Q246 534 228.5 495.5Q211 457 211 401V297Q211 242 228.5 203.0Q246 164 279.0 143.5Q312 123 357 123Z" transform="translate(743.78, 140.00) scale(0.143266, -0.143266)"/>
+                <path id="glyph-A" d="M665 0H507L457 166H224L174 0H20L250 698H438ZM420 295 377 440 342 560H337L303 440L260 295Z" transform="translate(846.07, 140.00) scale(0.143266, -0.143266)"/>
+              </g>
+              <!-- Terminal I Glyph (Inter 700) -->
+              <g id="terminal-i" fill="#F5F5F5">
+                <path id="glyph-I" d="M440 1490V0H135V1490Z" transform="translate(943.78, 140.00) scale(0.067114, -0.067114)"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="cover-meta">
+          <div class="telemetry orange">CONFIDENTIAL</div>
+          <div class="telemetry">SOVEREIGN BRAND ASSET SYSTEM v1.2</div>
+        </div>
+      </div>
+
+      <div>
+        <h1 class="cover-title">Master Services Agreement<br>& Statement of Work</h1>
+        <p class="cover-subtitle">Strategic Growth & Revenue Infrastructure Engagement</p>
+        <p class="cover-doctrine">"Human depth. Machine leverage. Precision over volume."</p>
+
+        <div class="cover-details">
+          <div class="detail-block">
+            <div class="label">PROJECT TITLE</div>
+            <div class="value placeholder">[Project.Title]</div>
+          </div>
+          <div class="detail-block">
+            <div class="label">AGREEMENT DATE</div>
+            <div class="value placeholder">[Effective.Date]</div>
+          </div>
+          <div class="detail-block">
+            <div class="label">TOTAL PROJECT FEE</div>
+            <div class="value placeholder">[Project.Fee]</div>
+          </div>
+          <div class="detail-block">
+            <div class="label">TIMELINE</div>
+            <div class="value placeholder">[Start.Date] → [EstimatedCompletionDate]</div>
+          </div>
+          <div class="detail-block full">
+            <div class="label">SCOPE SUMMARY</div>
+            <div class="value placeholder">[High-level description of engagement — e.g., "Precision Diagnostic & PGS Specification for revenue architecture redesign"]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span class="telemetry">EMPATHOAI // MASTER SERVICES AGREEMENT</span>
+        <span class="page-number">1</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 2: PARTIES & OVERVIEW ==================== -->
+    <div class="page">
+      <div class="page-header">
+        <h2 class="section-h2"><span class="anchor">01</span>PARTIES & AGREEMENT STRUCTURE</h2>
+      </div>
+
+      <p class="body-text">This Agreement consists of two parts:</p>
+      <ul class="contract-list">
+        <li><strong>Part 1 – Statement of Work (SOW):</strong> Defines the specific project scope, deliverables, milestones, functionality requirements, timeline, payment terms, and post-deployment support.</li>
+        <li><strong>Part 2 – Master Services Agreement (MSA):</strong> Establishes the general legal terms governing all projects between the Parties, including intellectual property, confidentiality, liability limits, indemnification, and dispute resolution.</li>
+      </ul>
+
+      <p class="body-text">This SOW is subject to the Master Services Agreement ("MSA") attached below. In case of conflict, this SOW shall control.</p>
+
+      <h3 class="subhead-h3"><span class="anchor">1.1</span>THE PARTIES</h3>
+
+      <div class="parties-grid">
+        <div class="party-card">
+          <div class="label">CLIENT</div>
+          <div class="value"><strong>Name:</strong> <span class="placeholder">[Buyer.FirstName] [Buyer.LastName]</span></div>
+          <div class="value"><strong>Company:</strong> <span class="placeholder">[Buyer.Company]</span></div>
+          <div class="value"><strong>Address:</strong> <span class="placeholder">[Buyer.Address]</span></div>
+        </div>
+        <div class="party-card">
+          <div class="label">FREELANCER / CONSULTANT</div>
+          <div class="value"><strong>Name/Business:</strong> <span class="placeholder">[Seller.Company]</span></div>
+          <div class="value"><strong>Address:</strong> <span class="placeholder">[Seller.Address]</span></div>
+        </div>
+      </div>
+
+      <h3 class="subhead-h3"><span class="anchor">1.2</span>KEY PROJECT DETAILS</h3>
+
+      <div class="key-details">
+        <div class="label">SCOPE OF WORK</div>
+        <div class="value placeholder">[High-level description — e.g., "Build and deploy AI automation system integrating with Client's CRM and scheduling tool"]</div>
+
+        <div class="label">TOTAL PROJECT FEE</div>
+        <div class="value placeholder">[Project.Fee]</div>
+
+        <div class="label">PAYMENT SCHEDULE</div>
+        <div class="value placeholder">[Deposit %, milestone amounts, due dates]</div>
+
+        <div class="label">PROJECT TIMELINE</div>
+        <div class="value placeholder">[Start.Date] to [EstimatedCompletionDate]</div>
+
+        <div class="label">WARRANTY / SUPPORT</div>
+        <div class="value placeholder">[e.g., "30 days warranty support; ongoing maintenance at [Ongoing.monthly.maintenance]"]</div>
+      </div>
+
+      <div class="page-footer">
+        <span class="telemetry">EMPATHOAI // MASTER SERVICES AGREEMENT</span>
+        <span class="page-number">2</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 3: SOW - SCOPE & DELIVERABLES ==================== -->
+    <div class="page">
+      <div class="page-header">
+        <h2 class="section-h2"><span class="anchor">02</span>PART 1: STATEMENT OF WORK</h2>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">2.1</div>
+        <div class="clause-title">PROJECT SCOPE & DELIVERABLES</div>
+        <p class="body-text">Freelancer agrees to perform the following Services:</p>
+        <div class="placeholder" style="padding: 16px; min-height: 80px; display: flex; align-items: center;">[Project.Scope]</div>
+        <p class="body-text" style="margin-top: 16px;">Deliverables:</p>
+        <div class="placeholder" style="padding: 16px; min-height: 80px; display: flex; align-items: center;">[Project.Deliverables]</div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">2.2</div>
+        <div class="clause-title">FUNCTIONALITY REQUIREMENTS</div>
+        <p class="body-text">Deliverables shall, at a minimum, perform the following functionality:</p>
+        <div class="placeholder" style="padding: 16px; min-height: 60px; display: flex; align-items: center;">[Functionality.System.Must.Have]</div>
+        <div class="placeholder" style="padding: 16px; min-height: 60px; display: flex; align-items: center; margin-top: 8px;">[Functionality.To.Meet.Acceptance]</div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">2.3</div>
+        <div class="clause-title">ACCEPTANCE TESTING</div>
+        <p class="body-text">Upon delivery of each milestone, Client shall have <strong>5–10 business days</strong> to test and confirm whether the deliverables meet the functionality requirements.</p>
+        <p class="body-text">If Client does not provide written notice of nonconformity within this period, the deliverables shall be deemed accepted.</p>
+        <p class="body-text">Any notice of nonconformity must specify the deficiency in writing. Freelancer shall promptly correct and resubmit for acceptance.</p>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">2.4</div>
+        <div class="clause-title">TIMELINE & MILESTONES</div>
+
+        <table class="milestone-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>MILESTONE DESCRIPTION</th>
+              <th>DUE DATE</th>
+              <th>PAYMENT %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td class="placeholder">[milestoneone]</td>
+              <td class="placeholder">[milestoneoneduedate]</td>
+              <td class="placeholder">[milestoneonepaymentpercent]</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="placeholder">[milestonetwo]</td>
+              <td class="placeholder">[milestonetwoduedate]</td>
+              <td class="placeholder">[milestonetwopaymentpercent]</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="placeholder">[milestonethree]</td>
+              <td class="placeholder">[milestonethreeduedate]</td>
+              <td class="placeholder">[milestonethreepaymentpercent]</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="placeholder">[milestonefour]</td>
+              <td class="placeholder">[milestonefourduedate]</td>
+              <td class="placeholder">[milestonefourpaymentpercent]</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="body-text"><strong>Note:</strong> Additional milestones may be added by mutual written agreement via Change Order.</p>
+      </div>
+
+      <div class="page-footer">
+        <span class="telemetry">EMPATHOAI // STATEMENT OF WORK</span>
+        <span class="page-number">3</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 4: RESPONSIBILITIES & PAYMENT ==================== -->
+    <div class="page">
+      <div class="page-header">
+        <h2 class="section-h2"><span class="anchor">03</span>RESPONSIBILITIES & PAYMENT TERMS</h2>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">3.1</div>
+        <div class="clause-title">CLIENT RESPONSIBILITIES</div>
+        <ul class="contract-list">
+          <li>Provide all requested access, data, API keys, and materials in a timely manner.</li>
+          <li>Designate a single point of contact for coordination.</li>
+          <li>Review and approve deliverables promptly.</li>
+          <li>Ensure all materials provided are lawful and non-infringing.</li>
+          <li>Cooperate reasonably to avoid delays.</li>
+        </ul>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">3.2</div>
+        <div class="clause-title">FREELANCER RESPONSIBILITIES</div>
+        <ul class="contract-list">
+          <li>Perform Services consistent with industry standards and with reasonable skill and care.</li>
+          <li>Remain responsible for the performance of any subcontractors used.</li>
+          <li>Provide regular progress updates.</li>
+        </ul>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">3.3</div>
+        <div class="clause-title">PAYMENT TERMS</div>
+        <div class="key-details">
+          <div class="label">TOTAL FEE</div>
+          <div class="value placeholder">[Project.Fee]</div>
+
+          <div class="label">PAYMENT STRUCTURE</div>
+          <div class="value placeholder">[Milestone-based / upfront deposit + final payment]</div>
+
+          <div class="label">PAYMENT TERMS</div>
+          <div class="value placeholder">Net [X] days from invoice date</div>
+
+          <div class="label">LATE PAYMENT</div>
+          <div class="value">Freelancer may suspend work if payments are late beyond agreed terms.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">3.4</div>
+        <div class="clause-title">POST-DEPLOYMENT SUPPORT & MAINTENANCE</div>
+        <div class="key-details">
+          <div class="label">WARRANTY PERIOD</div>
+          <div class="value placeholder">[30/60/90] days post-deployment</div>
+
+          <div class="label">WARRANTY SCOPE</div>
+          <div class="value">Fix defects preventing the system from meeting functionality requirements, at no cost. Minor adjustments that do not materially alter scope included.</div>
+
+          <div class="label">ONGOING MAINTENANCE (OPTIONAL)</div>
+          <div class="value placeholder">Available at Freelancer's then-current rates ([Ongoing.monthly.maintenance])</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span class="telemetry">EMPATHOAI // STATEMENT OF WORK</span>
+        <span class="page-number">4</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 5: MSA ==================== -->
+    <div class="page">
+      <div class="page-header">
+        <h2 class="section-h2"><span class="anchor">04</span>PART 2: MASTER SERVICES AGREEMENT</h2>
+      </div>
+
+      <p class="body-text">This MSA governs all services performed by Freelancer for Client across all current and future SOWs.</p>
+
+      <div class="clause">
+        <div class="clause-number">4.1</div>
+        <div class="clause-title">TERM AND TERMINATION</div>
+        <ul class="contract-list">
+          <li>This Agreement begins on the Effective Date and continues until terminated.</li>
+          <li>Either party may terminate with <strong>30 days</strong> written notice.</li>
+          <li>Either party may terminate immediately for material breach, subject to a <strong>10-day cure period</strong>.</li>
+          <li>Upon termination, Client shall pay for all Services performed and deliverables accepted to date.</li>
+        </ul>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.2</div>
+        <div class="clause-title">INTELLECTUAL PROPERTY</div>
+        <ul class="contract-list">
+          <li>All pre-existing IP of Freelancer remains Freelancer's property.</li>
+          <li>Upon full payment, deliverables created under this SOW transfer to Client.</li>
+          <li>Freelancer retains the right to use non-confidential learnings, know-how, and methodologies developed during the engagement.</li>
+        </ul>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.3</div>
+        <div class="clause-title">CONFIDENTIALITY</div>
+        <p class="body-text">Both parties agree to protect and not disclose each other's confidential information except as required to perform this Agreement. Confidentiality obligations survive termination for <strong>3 years</strong>.</p>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.4</div>
+        <div class="clause-title">CLIENT MATERIALS & COMPLIANCE</div>
+        <ul class="contract-list">
+          <li>Client represents that any materials, data, or access it provides are lawful and do not infringe third-party rights.</li>
+          <li>Client shall indemnify Freelancer against claims arising from Client-provided materials.</li>
+        </ul>
+      </div>
+
+      <div class="page-footer">
+        <span class="telemetry">EMPATHOAI // MASTER SERVICES AGREEMENT</span>
+        <span class="page-number">5</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 6: MSA CONTINUED ==================== -->
+    <div class="page">
+      <div class="clause">
+        <div class="clause-number">4.5</div>
+        <div class="clause-title">INDEPENDENT CONTRACTOR</div>
+        <p class="body-text">Freelancer is an independent contractor, not an employee. Client shall not control how Freelancer performs the Services. No employment, partnership, or joint venture is created by this Agreement.</p>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.6</div>
+        <div class="clause-title">LIABILITY LIMITS</div>
+        <ul class="contract-list">
+          <li>Freelancer's liability is capped at the total fees paid under the applicable SOW.</li>
+          <li>Freelancer is not liable for indirect, incidental, or consequential damages (including lost profits, data loss, or business interruption).</li>
+        </ul>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.7</div>
+        <div class="clause-title">INDEMNIFICATION</div>
+        <ul class="contract-list">
+          <li>Client shall indemnify Freelancer against claims arising from Client's use of the deliverables, misuse, or violation of law.</li>
+          <li>Freelancer shall indemnify Client against claims that Freelancer's work infringes third-party IP, provided Client used deliverables as intended.</li>
+        </ul>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.8</div>
+        <div class="clause-title">NON-SOLICITATION</div>
+        <p class="body-text">During the term and for <strong>12 months</strong> thereafter, neither party shall solicit or hire the other's employees or contractors without written consent.</p>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.9</div>
+        <div class="clause-title">DISPUTE RESOLUTION</div>
+        <ul class="contract-list">
+          <li>Parties shall first attempt to resolve disputes through good faith negotiation.</li>
+          <li>If unresolved, disputes shall proceed to <strong>[mediation/arbitration]</strong> in <strong>[Jurisdiction]</strong>.</li>
+          <li>Governing law: <strong>[State/Country]</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="clause">
+        <div class="clause-number">4.10</div>
+        <div class="clause-title">GENERAL PROVISIONS</div>
+        <ul class="contract-list">
+          <li>This Agreement constitutes the entire agreement between the parties.</li>
+          <li>Amendments must be in writing and signed by both parties.</li>
+          <li>Notices shall be sent to the addresses listed on the cover page.</li>
+          <li>Neither party may assign without the other's consent, except to successors.</li>
+          <li>If any provision is found unenforceable, the remainder remains in effect.</li>
+        </ul>
+      </div>
+
+      <div class="page-footer">
+        <span class="telemetry">EMPATHOAI // MASTER SERVICES AGREEMENT</span>
+        <span class="page-number">6</span>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 7: SIGNATURES ==================== -->
+    <div class="page">
+      <div class="page-header">
+        <h2 class="section-h2"><span class="anchor">05</span>EXECUTION</h2>
+      </div>
+
+      <p class="body-text">By signing below, both parties acknowledge they have read, understood, and agreed to the terms outlined in this Agreement, consisting of the Cover Page, the Statement of Work (Part 1), and the Master Services Agreement (Part 2).</p>
+
+      <div class="signature-block">
+        <div class="signature-party">
+          <div class="label">FREELANCER / CONSULTANT</div>
+          <div class="value"><strong>Name:</strong> <span class="placeholder">[Seller.FirstName] [Seller.LastName]</span></div>
+          <div class="value"><strong>Title:</strong> <span class="placeholder">[Seller.Title]</span></div>
+          <div class="value"><strong>Company:</strong> <span class="placeholder">[Seller.Company]</span></div>
+          <div class="signature-line"></div>
+          <div class="value"><strong>Signature:</strong> ________________________________________</div>
+          <div class="value"><strong>Date:</strong> ________________________________________</div>
+        </div>
+
+        <div class="signature-party">
+          <div class="label">CLIENT</div>
+          <div class="value"><strong>Name:</strong> <span class="placeholder">[Buyer.FirstName] [Buyer.LastName]</span></div>
+          <div class="value"><strong>Title:</strong> <span class="placeholder">[Buyer.Title]</span></div>
+          <div class="value"><strong>Company:</strong> <span class="placeholder">[Buyer.Company]</span></div>
+          <div class="signature-line"></div>
+          <div class="value"><strong>Signature:</strong> ________________________________________</div>
+          <div class="value"><strong>Date:</strong> ________________________________________</div>
+        </div>
+      </div>
+
+      <div class="info-callout" style="margin-top: 48px;">
+        <div class="label">DOCUMENT CONTROL</div>
+        <div class="telemetry">EMPATHOAI MSA/SOW TEMPLATE v1.0 // SOVEREIGN BRAND SYSTEM</div>
+        <div class="telemetry" style="margin-top: 4px;">Generated from F:\OS-EmpathoAI\EMPATHOAI_BRAND_ASSETS\05_TOKENS\tokens.json</div>
+      </div>
+
+      <div class="page-footer">
+        <span class="telemetry">EMPATHOAI // MASTER SERVICES AGREEMENT</span>
+        <span class="page-number">7</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
