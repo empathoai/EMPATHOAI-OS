@@ -1,0 +1,55 @@
+{
+  "audit_id": "YYYY-MM-DD-business-slug",
+  "business": { "name": "", "vertical": "", "city": "", "state": "" },
+  "required_phase_ids": [
+    "FASE 0", "FASE 0.1", "FASE 1", "FASE 2", "FASE 3", "FASE 4", "FASE 5",
+    "FASE 5.1", "FASE 6", "FASE 6.1", "FASE 6.2", "FASE 7", "FASE 7.1",
+    "FASE 8", "FASE 9", "FASE 10", "FASE 11", "FASE 12", "FASE 13", "FASE 14"
+  ],
+  "phases": [
+    {
+      "id": "FASE 0.1",
+      "mandatory": true,
+      "status": "NOT RUN",
+      "required_artifact": true,
+      "artifact_path": "",
+      "sha256": "",
+      "minimum_analysis_complete": false,
+      "coverage": "",
+      "limitation": ""
+    },
+    {
+      "id": "FASE 8",
+      "mandatory": true,
+      "status": "NOT RUN",
+      "required_artifact": true,
+      "artifact_path": "",
+      "sha256": "",
+      "minimum_analysis_complete": false,
+      "coverage": "",
+      "dataset_coverage": "",
+      "rating_1_to_4_count": 0,
+      "repeated_themes": [],
+      "owner_response_analysis": "",
+      "unresolved_issues": [],
+      "limitation": ""
+    }
+  ],
+  "evidence_manifest": [
+    {
+      "evidence_id": "E-001",
+      "phase": "FASE 0.1",
+      "source": "",
+      "url_or_query": "",
+      "retrieval_method": "",
+      "timestamp": "",
+      "artifact_path": "",
+      "record_count_or_coverage": "",
+      "sha256": "",
+      "limitation_or_failure": "",
+      "derived_finding": "",
+      "confidence": "",
+      "severity": ""
+    }
+  ]
+}

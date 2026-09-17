@@ -5,27 +5,30 @@ Registry of every system your EmpathoAiOS can reach. Record confirmed connection
 | # | Domain | Tool | Mechanism | Auth | Last checked |
 |---|---|---|---|---|---|
 | 1 | Source control | GitHub — `empathoai/EMPATHOAI-OS` | git remote | configured locally; method not recorded | 2026-09-09 |
-| 2 | Automation / integrations | Composio CLI `0.4.1` | WSL CLI | authenticated; org `empathoai` | 2026-09-09 |
+| 2 | Automation / integrations | Composio MCP Server | mcp (`mcp__composio__*`) | active in Codex & Antigravity; toolkits: apify, firecrawl, gmail, etc. | 2026-09-17 — verified via Codex discovery |
 | 3 | Web research / extraction | Firecrawl | Composio toolkit `firecrawl` | 1 active | 2026-09-09 |
 | 4 | Communication | Gmail | Composio toolkit `gmail` | 3 active; 1 expired | 2026-09-09 |
 | 5 | Communication | Outlook | Composio toolkit `outlook` | 1 active | 2026-09-09 |
 | 6 | Content / media | YouTube | Composio toolkit `youtube` | 1 active; 1 expired | 2026-09-09 |
 | 7 | Calendar / scheduling | Cal | Composio toolkit `cal` | 1 active | 2026-09-09 |
-| 8 | Calendar / scheduling | Google Calendar | Composio toolkit `googlecalendar` | 1 expired; re-link required | 2026-09-09 |
+| 8 | Calendar / scheduling | Google Calendar | Composio toolkit `googlecalendar` | 1 active (`empathoai@gmail.com`) | 2026-09-16 — OAuth re-auth confirmed and validated |
 | 9 | Calendar / scheduling | Google Meet | Composio toolkit `googlemeet` | 1 active | 2026-09-09 |
 | 10 | Project / task tracking | Google Tasks | Composio toolkit `googletasks` | 1 active; 1 expired | 2026-09-09 |
-| 11 | Knowledge / files | Google Drive | Composio toolkit `googledrive` | 1 active; 1 expired | 2026-09-09 |
+| 11 | Knowledge / files | Google Drive | Composio toolkit `googledrive` | 1 active; 1 expired | 2026-09-10 — active connection and target folder access validated |
 | 12 | Knowledge / files | Google Docs | Composio toolkit `googledocs` | 1 active | 2026-09-09 |
-| 13 | Knowledge / files | Google Sheets | Composio toolkit `googlesheets` | 1 active | 2026-09-09 |
+| 13 | Knowledge / files | Google Sheets | Composio toolkit `googlesheets` | 1 active | 2026-09-10 — active connection validated; no write executed |
 | 14 | Customer / data operations | Airtable | Composio toolkit `airtable` | 1 active; 1 failed | 2026-09-09 |
 | 15 | Search / analytics | Google Search Console | Composio toolkit `google_search_console` | 1 active | 2026-09-09 |
 | 16 | Web automation / extraction | Apify | Composio toolkit `apify` | 1 active; 1 expired | 2026-09-09 |
-| 17 | Revenue / Financials | _not recorded_ | not yet connected | — | — |
-| 18 | Customer interactions | _not recorded_ | not yet connected | — | — |
-| 19 | Project / task tracking | _not recorded_ | not yet connected | — | — |
-| 20 | Meeting intelligence | _not recorded_ | not yet connected | — | — |
+| 17 | Design / creative workflows | OpenDesign | Hermes ACP agent CLI | configured locally; model synced from Hermes CLI; credentials not inspected | 2026-09-12 — OpenDesign UI showed Hermes ACP agent and synced `gpt-5.6-terra`; test passed: Hermes replied `ok` in 12,686 ms |
+| 18 | Revenue / Financials | _not recorded_ | not yet connected | — | — |
+| 19 | Customer interactions | _not recorded_ | not yet connected | — | — |
+| 20 | Project / task tracking | _not recorded_ | not yet connected | — | — |
+| 21 | Meeting intelligence | _not recorded_ | not yet connected | — | — |
+| 22 | Marketing & Acquisition Hub | OS-MarketingHub | local directory (`F:\OS-MarketingHub`) | read-only reference | 2026-09-16 — verified local existence and submodules |
+| 23 | Web & Autonomous Agents | OS-WebInteligence | local directory (`F:\OS-WebInteligence`) | read-only reference | 2026-09-16 — verified local existence and agent suite |
 
-**Mechanism options:** `mcp` (MCP server), `script` (Python/Bash hitting an API, in `scripts/`), `export` (CSV/JSON dump pipeline), `git remote`, `key+ref` (`.env` key + `references/{tool}-api.md` guide), `not yet connected`.
+**Mechanism options:** `mcp` (MCP server), `script` (Python/Bash hitting an API, in `scripts/`), `export` (CSV/JSON dump pipeline), `git remote`, `key+ref` (`.env` key + `references/{tool}-api.md` guide), `read-only reference` (local OS consulted for architecture and capabilities, no writes permitted), `not yet connected`.
 
 When you wire a new tool, also save `references/{tool}-api.md` capturing endpoints, auth flow, and common queries — researched-once-saved-forever. Composio-specific usage is documented in `references/composio-cli.md`.
 

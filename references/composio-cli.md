@@ -2,10 +2,9 @@
 
 ## Confirmed environment
 
-- CLI version: `0.4.1`
-- Runtime: WSL / Ubuntu on Windows
-- Account verified with `composio whoami`
-- Organization: `empathoai`
+- Primary agent interface: **Composio MCP Server** (`mcp__composio__COMPOSIO_MULTI_EXECUTE_TOOL`, `mcp__composio__COMPOSIO_SEARCH_TOOLS`). Active in Codex & Antigravity with toolkits: `apify`, `firecrawl`, `gmail`, `googlesheets`, `airtable`, etc.
+- CLI fallback: `0.4.1` under WSL / Ubuntu when terminal CLI is available.
+- Account verified with Composio org: `empathoai`
 - Authentication state is managed outside the repository by Composio under `~/.composio/`
 - Do not copy tokens, user data, or connection secrets into this repository.
 

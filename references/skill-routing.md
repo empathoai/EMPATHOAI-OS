@@ -42,6 +42,8 @@
 | `blocked-page-recovery` | A primary fetch fails with a 403/429, paywall, WAF, bot wall, or unavailable page. | Fallback/orchestration only; try archives, API/RSS, and provenance-preserving routes before technical scraping. |
 | `archify` | The task needs an architecture, workflow, sequence, data-flow, or lifecycle diagram, or a Mermaid conversion into a verified standalone HTML artifact. | Use for visualizing EmpathoAiOS architecture, operating workflows, research pipelines, and decision-relevant system maps. It is an artifact generator, not a general drawing editor. |
 | `last30days` | The task needs current, community-grounded signals about a market, customer pain, competitor, person, product, trend, or content topic from roughly the last 30 days. | Use for discovery and pre-decision research. Prefer existing Firecrawl, Apify, YouTube, or other connected tools when a narrow source-specific lookup is sufficient; do not activate optional paid/API sources without explicit configuration. |
+| `pre-call-intel` | Auditing, researching, or evaluating any prospect, business, or potential client before a meeting, calculating Cost of Inaction (COI), or generating a 1-page Pre-Call Brief. | Commercial diagnostic layer. Coordinates public tools, catalog economics, and active browser sessions for authenticated inspection. |
+| `agy-customizations` | Explaining, creating, or managing rules, skills, MCP servers, hooks, or configurations across Antigravity, Codex, and Claude Code (The Triad). | Primary guide for AI customization and cross-runtime parity; overrides default system built-in. |
 | `youtube-content` | The user provides a YouTube URL or asks for a transcript, summary, chapters, quotes, thread, or blog post from a specific video. | Use the public-transcript path; it does not require the user's YouTube account or channel. |
 
 ## Overlap rules
@@ -58,6 +60,13 @@
 - Do not load multiple extraction skills for the same URL unless the task requires comparison or the preceding route failed. This preserves credits, context, and provenance.
 - `audit` verifies routing and compatibility; it does not repair the system as a side effect.
 - `onboard`, `link`, `level-up`, and `3d-brain` are specialized workflows and should not be loaded for unrelated tasks.
+
+## External read-only OS routing
+
+Consult these local repositories on demand when a task matches their specialized domain; never create, edit, or delete files inside them:
+
+- `F:\OS-MarketingHub`: Reach into this system when architecting organic content funnels, paid media campaigns (Meta/Google Ads), creative testing (3:2:2), video editing workflows, or overall marketing strategy.
+- `F:\OS-WebInteligence`: Reach into this system when building, auditing, redesigning, or migrating websites and landing pages, optimizing for AI Search / GEO / AEO, enforcing Core Web Vitals budgets, or injecting Schema.org entities and `llms.txt`.
 
 ## Context discipline
 

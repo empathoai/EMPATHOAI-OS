@@ -110,6 +110,8 @@ Turn your growing collection of notes, projects, and assistant memories into one
 
 The preview above plays the full growth sequence. **[Download the original 36-second video](docs/media/3d-brain-demo.mp4)** for full-resolution playback. This recording is inherited upstream media. The skill builds Alex's 3D Brain using the name, categories, and saved knowledge he selects.
 
+**Current local instance:** `apps/3d-brain/` — **EmpathoAI Brain**, generated from the full `F:\EmpathoKnowledge` vault. Start it with `node serve.mjs` from that folder.
+
 Run `/3d-brain` in Claude Code or `$3d-brain` in Codex. It asks what to call your brain and which categories to show, with suggested source folders. Then it creates `apps/3d-brain/` using the included application template. Your name, categories, colors, and paths live in a local config.
 
 Use **Play demo** to watch the brain grow from a single idea into connected branches. You can drag to orbit and scroll to zoom throughout playback. **Cinema** provides a clean presentation view. The replay follows actual note connections; it is not a historical timeline.
